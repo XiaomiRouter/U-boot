@@ -1,0 +1,14 @@
+*.o
+*.a
+*.depend
+/.config
+/.config.old
+System.map
+autoconf.h
+/tools/mkimage
+/u-boot
+/u-boot.map
+/u-boot.srec
+/uboot.bin
+/uboot.img
+uboot_128k.bin
