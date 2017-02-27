@@ -602,9 +602,9 @@ void OperationSelect(void)
 	printf( "   %d: System Load Linux then write to Flash via Serial. \n", SEL_LOAD_LINUX_WRITE_FLASH_BY_SERIAL );
 	printf( "   %d: Load system code to SDRAM via TFTP. \n", SEL_LOAD_LINUX_SDRAM );
 	printf( "   %d: Load system code then write to Flash via TFTP. \n", SEL_LOAD_LINUX_WRITE_FLASH );
-	printf( "   %d: Boot system code via Flash (default).\n", SEL_BOOT_FLASH );
+	printf( "   %d: Boot system code via Flash.\n", SEL_BOOT_FLASH );
 #ifdef RALINK_CMDLINE
-	printf( "   %d: Entr boot command line interface.\n", SEL_ENTER_CLI );
+	printf( "   %d: Entr boot command line interface.(default)\n", SEL_ENTER_CLI );
 #endif // RALINK_CMDLINE //
 #ifdef RALINK_UPGRADE_BY_SERIAL
 	printf( "   %d: Load Boot Loader code then write to Flash via Serial. \n", SEL_LOAD_BOOT_WRITE_FLASH_BY_SERIAL );
@@ -1457,7 +1457,7 @@ void board_init_r (gd_t *id, ulong dest_addr)
 				timer1 = 0;	/* no more delay	*/
 				BootType = getc();
 				if ( ( BootType < '0' || BootType > '5' ) && ( BootType != '7' ) && ( BootType != '8' ) && ( BootType != '9' ) )
-					BootType = '3';
+					BootType = '4';
 				printf( "\n\rYou choosed %c\n\n", BootType );
 				break;
 			}

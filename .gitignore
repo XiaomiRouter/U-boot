@@ -12,3 +12,4 @@ autoconf.h
 /uboot.bin
 /uboot.img
 uboot_128k.bin
+tags
