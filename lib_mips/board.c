@@ -1124,6 +1124,12 @@ void board_init_r (gd_t *id, ulong dest_addr)
 #endif
 
 	bd = gd->bd;
+#if defined (NAND_FLASH_SUPPORT)
+	if ((size = ranand_init()) == (ulong)-1) {
+		printf("ra_nand_init fail\n");
+		while(1);
+	}
+#endif
 #if defined (CFG_ENV_IS_IN_NAND)
 	if ((size = ranand_init()) == (ulong)-1) {
 		printf("ra_nand_init fail\n");
@@ -1156,6 +1162,10 @@ void board_init_r (gd_t *id, ulong dest_addr)
 	/* initialize malloc() area */
 	mem_malloc_init();
 	malloc_bin_reloc();
+
+#if defined (NAND_FLASH_SUPPORT)
+	nand_env_init();
+#endif 
 
 #if defined (CFG_ENV_IS_IN_NAND)
 	nand_env_init();

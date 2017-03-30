@@ -57,6 +57,10 @@ ifeq ($(CFG_ENV_IS), IN_NAND)
 OBJS	+= env_nand.o
 endif
 
+ifeq ($(NAND_FLASH_SUPPORT),y)
+COBJS += env_nand.o
+endif
+
 CPPFLAGS += -I..
 
 all:	$(LIB) $(AOBJS)

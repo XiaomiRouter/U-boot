@@ -55,6 +55,10 @@ OBJS	+= nand_flash.o
  endif
 endif
 
+ifeq ($(NAND_FLASH_SUPPORT), y)
+OBJS	+= nand_flash.o
+endif
+
 ifeq ($(RALINK_OHCI), ON)
 OBJS	+= ohci-hcd.o
 endif

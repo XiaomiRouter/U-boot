@@ -1,6 +1,6 @@
 #include <common.h>
 
-#if defined(CFG_ENV_IS_IN_NAND) /* Environment is in NAND Flash */
+#if defined(CFG_ENV_IS_IN_NAND) || defined (NAND_FLASH_SUPPORT) /* Environment is in NAND Flash */
 
 #include <command.h>
 #include <environment.h>

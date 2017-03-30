@@ -849,6 +849,8 @@ choice 'Flash Type' "NAND ON_BOARD_NAND_FLASH_COMPONENT \
                      SPI ON_BOARD_SPI_FLASH_COMPONENT
 		    "SPI
 
+bool "NAND FLASH SUPPORT" NAND_FLASH_SUPPORT
+
 if [ "$DUAL_IMAGE_SUPPORT" = "y" ]; then
 choice 'Flash Size' "4M ON_BOARD_4M_FLASH_COMPONENT \
                      8M ON_BOARD_8M_FLASH_COMPONENT \
